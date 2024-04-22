@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name     : skruhlik-app
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    name     : in-cluster
+    namespace: flask
+  source:
+    path   : "argocd_app/helmcharts/MyChart_flask"
+    repoURL: "git@github.com:cef-hub/End_project_ArgoCD.git"
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+      - values.yaml
+      parameters:
+      - name: "skruhlik-app.container.image"
+        value: cefcefcef/devops:ussage 
+
+  project: default
+  syncPolicy:
+    automated:
+      prune   : true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true         

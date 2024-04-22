@@ -1,0 +1,18 @@
+# Default Values for my Helm Chart
+
+container:
+  image: cefcefcef/devops:ussage 
+
+replicaCount: 1
+
+name_application:
+  name: "skruhlik-app"
+
+load_balancer_port:
+  port: 3333
+
+pod_port:
+  port: 5555
+
+service_type:
+ service: "LoadBalancer"

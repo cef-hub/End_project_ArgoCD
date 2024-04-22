@@ -1,0 +1,5 @@
+module "argocd" {
+  source           = "./terraform_argocd_eks"
+  eks_cluster_name = "skruhlik-eks-cluster"
+  chart_version    = "6.7.14"
+}
