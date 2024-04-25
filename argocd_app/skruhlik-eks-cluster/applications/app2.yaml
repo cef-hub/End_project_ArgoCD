@@ -11,7 +11,7 @@ spec:
     namespace: flask
   source:
     path   : "argocd_app/helmcharts/MyChart2"
-    repoURL: "git@github.com:cef-hub/End_project_ArgoCD.git"
+    repoURL: "https://github.com/cef-hub/End_project_ArgoCD.git"
     targetRevision: HEAD
     helm:
       valueFiles:

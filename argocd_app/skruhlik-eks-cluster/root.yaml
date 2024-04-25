@@ -11,7 +11,7 @@ spec:
     namespace: argocd
   source:
     path   : "argocd_app/skruhlik-eks-cluster/applications"
-    repoURL: "git@github.com:cef-hub/End_project_ArgoCD.git"
+    repoURL: "https://github.com/cef-hub/End_project_ArgoCD.git"
     targetRevision: HEAD
   project: default
   syncPolicy:
