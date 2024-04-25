@@ -1,5 +1,5 @@
 
-## Создали файл main.tf Terraform для раскатывания ArgoCD 
+## Создали файл main.tf для раскатывания ArgoCD 
 
 ```
 
@@ -32,7 +32,7 @@ resource "helm_release" "argocd" {
 
 ```
 
-## Создали файл argocd.tf Terraform для создания HA-cluster ArgoCD, файл variables.tf и values.tf
+## Создали файл argocd.tf для создания HA-cluster ArgoCD, файл variables.tf и values.tf
 
 ```
 
@@ -74,6 +74,7 @@ server:
 ```
 
 ```
+variables.tf
 
 variable "eks_cluster_name" {
   description = "EKS Cluster name to deploy ArgoCD"
@@ -90,6 +91,8 @@ variable "chart_version" {
 ```
 
 ```
+
+values.yaml
 
 server:
   service:
