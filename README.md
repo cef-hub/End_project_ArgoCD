@@ -1,35 +1,8 @@
 ## Схема root Application и Application1, Application2
 
-
 ```
 
-├── argocd_app
-    │
-	│── helmcharts             # All Helm Charts
-	│   │ 
-	│   ├── MyChart_flask      #Chart App1
-	│   │   ├── Chart.yaml
-	│   │   │── values.yaml        # Default Values
-    │   │   │
-	│   │   │──template
-	│   │       │
-	│	│		│── deployment.yaml
-	│	│		│── service.yaml
-	│   │
-	│   └── MyChart2           #Chart App2
-	│   │   ├── Chart.yaml
-	│   │   │── values.yaml        # Default Values
-    │   │   │
-	│   │   │──template
-	│   │       │
-	│	│		│── deployment.yaml
-	│	│		│── service.yaml
-	│   
-	├── skruhlik-eks-cluster       # EKS Cluster name
-	│   ├── applications
-	│   │   ├── app1.yaml
-	│   │   └── app2.yaml
-	    └── root.yaml              # Root ArgoCD Application
+![scheme](https://github.com/cef-hub/End_project_ArgoCD/blob/main/Pictures/scheme.png?raw=true)
 
 ```
 
