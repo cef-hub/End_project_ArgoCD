@@ -200,6 +200,8 @@ spec:
       selfHeal: true
       
 ```
+
+```
 Application1 app1.yaml
 
 apiVersion: argoproj.io/v1alpha1
