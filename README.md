@@ -1,8 +1,41 @@
+## Схема root Application и Application1, Application2
+
+
+```
+
+├── argocd_app
+    │
+	│── helmcharts             # All Helm Charts
+	│   │ 
+	│   ├── MyChart_flask      #Chart App1
+	│   │   ├── Chart.yaml
+	│   │   │── values.yaml        # Default Values
+    │   │   │
+	│   │   │──template
+	│   │       │
+	│	│		│── deployment.yaml
+	│	│		│── service.yaml
+	│   │
+	│   └── MyChart2           #Chart App2
+	│   │   ├── Chart.yaml
+	│   │   │── values.yaml        # Default Values
+    │   │   │
+	│   │   │──template
+	│   │       │
+	│	│		│── deployment.yaml
+	│	│		│── service.yaml
+	│   
+	├── skruhlik-eks-cluster       # EKS Cluster name
+	│   ├── applications
+	│   │   ├── app1.yaml
+	│   │   └── app2.yaml
+	    └── root.yaml              # Root ArgoCD Application
+
+```
 
 ## Создали файл main.tf для раскатывания ArgoCD 
 
 ```
-
 data "aws_eks_cluster" "this" {
   name = var.eks_cluster_name
 }
@@ -35,7 +68,6 @@ resource "helm_release" "argocd" {
 ## Создали файл argocd.tf для создания HA-cluster ArgoCD, файл variables.tf и values.tf
 
 ```
-
 # Highly Available mode with autoscaling require minimum 3 nodes!
 redis-ha:
   enabled: true
@@ -91,7 +123,6 @@ variable "chart_version" {
 ```
 
 ```
-
 values.yaml
 
 server:
@@ -119,7 +150,6 @@ helm_revision = 1
 ## Создали terraform файлы main.tf шаблон и сам root.yaml для создания root Application ArgoCD, Application1 и Application2
 
 ```
-
 main.tf
 
 data "aws_eks_cluster" "this" {
@@ -148,7 +178,6 @@ resource "kubernetes_manifest" "argocd_root" {
 ```
 
 ```
-
 шаблон root.yaml
 
 apiVersion: argoproj.io/v1alpha1
@@ -175,7 +204,6 @@ spec:
 ```
 
 ```
-
 root.yaml Application
 
 apiVersion: argoproj.io/v1alpha1
@@ -200,7 +228,6 @@ spec:
       selfHeal: true
       
 ```
-
 Application1 app1.yaml
 
 apiVersion: argoproj.io/v1alpha1
@@ -236,7 +263,6 @@ spec:
 ```
 
 ```
-
 Application2 app2.yaml
 
 apiVersion: argoproj.io/v1alpha1
@@ -274,7 +300,6 @@ spec:
 ##  Создали Chart для app1 и app2, values.yaml, deployment.yaml, service.yaml
 
 ```
-
 Chart App-HelmChart-1
 
 apiVersion: v2
@@ -297,7 +322,6 @@ maintainers:
 ```
 
 ```
-
 Chart App-HelmChart-2
 
 apiVersion: v2
@@ -320,7 +344,6 @@ maintainers:
 ```
 
 ```
-
 шаблон deployment.yaml
 
 apiVersion: apps/v1
@@ -349,7 +372,6 @@ spec:
 
 
 ```
-
 шаблон service.yaml
 
 apiVersion: v1
@@ -370,7 +392,6 @@ spec:
 
 
 ```
-
 values.yaml
 
 # Default Values for my Helm Chart
