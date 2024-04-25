@@ -1,24 +1,24 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name     : ADV-IT-app2
+  name     : skruhlik-app2
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     name     : in-cluster
-    namespace: ADV-IT-app2
+    namespace: flask
   source:
-    path   : "HelmCharts/MyChart2"
-    repoURL: "git@github.com:adv4000/argocd.git"
+    path   : "argocd_app/helmcharts/MyChart2"
+    repoURL: "git@github.com:cef-hub/End_project_ArgoCD.git"
     targetRevision: HEAD
     helm:
       valueFiles:
       - values.yaml
       parameters:
-      - name: "container.image"
-        value: adv4000/app2:v2
+      - name: "skruhlik-app.container.image"
+        value: cefcefcef/devops:ussage 
 
   project: default
   syncPolicy:

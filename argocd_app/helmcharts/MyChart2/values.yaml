@@ -1,6 +1,18 @@
 # Default Values for my Helm Chart
 
 container:
-  image: nginx:latest
+  image: cefcefcef/devops:ussage 
 
 replicaCount: 1
+
+name_application:
+  name: "skruhlik-app2"
+
+load_balancer_port:
+  port: 3334
+
+pod_port:
+  port: 5555
+
+service_type:
+ service: "LoadBalancer"

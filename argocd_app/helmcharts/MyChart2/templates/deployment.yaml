@@ -1,22 +1,21 @@
-
-apiVersion : apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}-deployment
+  name: {{ .Values.name_application.name }}
   labels:
-    app : {{ .Release.Name }}-deployment
+    app: {{ .Values.name_application.name }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      project: {{ .Release.Name }}
+      app: {{ .Values.name_application.name }}
   template:
     metadata:
       labels:
-        project: {{ .Release.Name }}   # Service will look for those PODS Labels!!!
+        app: {{ .Values.name_application.name }}
     spec:
       containers:
-        - name : {{ .Release.Name }}-web
-          image: {{ .Values.container.image }}
-          ports:
-            - containerPort: 80
+      - name: {{ .Values.name_application.name }}
+        image: {{ .Values.container.image }}
+        ports:
+        - containerPort: {{ .Values.pod_port.port }}

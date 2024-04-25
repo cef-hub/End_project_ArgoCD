@@ -27,4 +27,9 @@ server:
         health.lua: |
           hs = {}
           hs.status = "Healthy"
-          return hs        
+          return hs   
+#----------------------------------------------------------------
+# Change ClusterIP to LoadBalancer  
+server:
+  service:
+    type: LoadBalancer

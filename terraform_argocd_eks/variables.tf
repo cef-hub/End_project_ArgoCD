@@ -1,6 +1,7 @@
 variable "eks_cluster_name" {
   description = "EKS Cluster name to deploy ArgoCD"
   type        = string
+  default = "skruhlik-eks-cluster"
 }
 
 variable "chart_version" {
