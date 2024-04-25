@@ -2,6 +2,9 @@
 
 ![scheme](https://github.com/cef-hub/End_project_ArgoCD/blob/main/Pictures/scheme.png?raw=true)
 
+![scheme2](https://github.com/cef-hub/End_project_ArgoCD/blob/main/Pictures/scheme2.png?raw=true)
+
+
 ## Создали файл main.tf для раскатывания ArgoCD 
 
 ```
