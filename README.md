@@ -392,6 +392,7 @@ service_type:
 
 ##  Запушили все конфигурации в GitHub root Application и Application1 и Application2
 
+```
 D:\terraform\End_project_Argocd\ArgoCD>git commit -m "git add argocd_app terraform_argocd_eks terraform_argocd_root_eks"
 [main 85a2bc4] git add argocd_app terraform_argocd_eks terraform_argocd_root_eks
  9 files changed, 48 insertions(+), 30 deletions(-)
@@ -413,6 +414,7 @@ To https://github.com/cef-hub/End_project_ArgoCD.git
    20b9505..85a2bc4  main -> main
 branch 'main' set up to track 'argocd/main'.
 
+```
 
 ##  Создали root Application и Application1 и Application2
 
